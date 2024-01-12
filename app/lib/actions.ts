@@ -128,11 +128,12 @@ export async function updateInvoice(id: string, formData: FormData) {
     redirect('/dashboard/invoices');
 }
 
-export async function updateCustomer(id: string, formData: FormData) {
+export async function updateCustomer(id: string, currentState: any, formData: FormData) {
+    console.log({ id, formData });
     const validatedFields = UpdateCustomer.safeParse({
         name: formData.get('name'),
         email: formData.get('email'),
-        imageUrl: formData.get('imageUrl')
+        imageUrl: formData.get('image_url')
     });
 
     if (!validatedFields.success) {
