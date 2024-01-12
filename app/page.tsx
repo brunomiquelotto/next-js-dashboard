@@ -1,6 +1,6 @@
 import AcmeLogo from '@/app/components/acme-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import styles from '@/app/ui/home.module.css';
+import styles from '@/app/styles/home.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
