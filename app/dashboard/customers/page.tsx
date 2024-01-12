@@ -1,8 +1,8 @@
-import Pagination from '@/app/ui/customers/pagination';
-import Search from '@/app/ui/search';
-import Table from '@/app/ui/customers/table';
-import { CreateCustomer } from '@/app/ui/customers/buttons';
-import { CustomersTableSkeleton } from '@/app/ui/skeletons';
+import Pagination from '@/app/dashboard/customers/components/pagination';
+import Search from '@/app/components/search';
+import Table from '@/app/dashboard/customers/components/table';
+import { CreateCustomer } from '@/app/dashboard/customers/components/buttons';
+import { CustomersTableSkeleton } from '@/app/components/skeletons';
 import { Suspense } from 'react';
 import { fetchCustomerPages } from '@/app/lib/data';
 import { Metadata } from 'next';

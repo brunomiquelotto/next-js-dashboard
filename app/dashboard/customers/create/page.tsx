@@ -1,5 +1,5 @@
-import Form from '@/app/ui/customers/create-form';
-import Breadcrumbs from '@/app/ui/shared/breadcrumbs';
+import Form from '@/app/dashboard/customers/components/create-form';
+import Breadcrumbs from '@/app/components/breadcrumbs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

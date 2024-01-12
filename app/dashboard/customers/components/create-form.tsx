@@ -6,7 +6,7 @@ import {
     AtSymbolIcon,
     UserCircleIcon,
 } from '@heroicons/react/24/outline';
-import { Button } from '@/app/ui/button';
+import { Button } from '@/app/components/button';
 
 import { createCustomer } from '@/app/lib/actions';
 import { useFormState } from 'react-dom';

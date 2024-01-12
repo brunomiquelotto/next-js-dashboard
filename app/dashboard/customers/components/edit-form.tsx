@@ -7,7 +7,7 @@ import {
     UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { CustomerForm } from '@/app/lib/definitions';
-import { Button } from '@/app/ui/button';
+import { Button } from '@/app/components/button';
 
 import { updateCustomer } from '@/app/lib/actions';
 import { useFormState } from 'react-dom';
