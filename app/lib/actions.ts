@@ -32,7 +32,7 @@ const UpdateInvoice = InvoiceFormSchema.omit({ id: true, date: true });
 const CreateCustomer = CustomerFormSchema.omit({ id: true, date: true });
 const UpdateCustomer = CustomerFormSchema.omit({ id: true, date: true });
 
-export type State = {
+export type InvoiceFormState = {
     errors?: {
         customerId?: string[];
         amount?: string[];
@@ -41,7 +41,16 @@ export type State = {
     message?: string | null;
 };
 
-export async function createInvoice(prevState: State, formData: FormData) {
+export type CustomerFormState = {
+    errors?: {
+        name?: string[];
+        email?: string[];
+        imageUrl?: string[];
+    };
+    message?: string | null;
+};
+
+export async function createInvoice(prevState: InvoiceFormState, formData: FormData): Promise<InvoiceFormState> {
     const validatedFields = CreateInvoice.safeParse({
         customerId: formData.get('customerId'),
         amount: formData.get('amount'),
@@ -73,7 +82,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
     redirect('/dashboard/invoices');
 }
 
-export async function createCustomer(prevState: State, formData: FormData) {
+export async function createCustomer(prevState: CustomerFormState, formData: FormData): Promise<CustomerFormState> {
     const validatedFields = CreateCustomer.safeParse({
         name: formData.get('name'),
         email: formData.get('email'),
@@ -105,7 +114,7 @@ export async function createCustomer(prevState: State, formData: FormData) {
 }
 
 
-export async function updateInvoice(id: string, formData: FormData) {
+export async function updateInvoice(id: string, formData: FormData): Promise<InvoiceFormState> {
     const { customerId, amount, status } = UpdateInvoice.parse({
         customerId: formData.get('customerId'),
         amount: formData.get('amount'),
@@ -128,7 +137,7 @@ export async function updateInvoice(id: string, formData: FormData) {
     redirect('/dashboard/invoices');
 }
 
-export async function updateCustomer(id: string, currentState: any, formData: FormData) {
+export async function updateCustomer(id: string, currentState: any, formData: FormData): Promise<CustomerFormState> {
     console.log({ id, formData });
     const validatedFields = UpdateCustomer.safeParse({
         name: formData.get('name'),
